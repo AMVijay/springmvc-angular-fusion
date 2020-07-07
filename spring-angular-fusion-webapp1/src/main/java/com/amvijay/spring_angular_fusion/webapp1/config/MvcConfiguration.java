@@ -1,6 +1,7 @@
 package com.amvijay.spring_angular_fusion.webapp1.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -12,8 +13,8 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
+@ComponentScan(basePackages = { "com.amvijay.spring_angular_fusion.webapp1.web.controllers" })
 public class MvcConfiguration implements WebMvcConfigurer {
-
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("index");
